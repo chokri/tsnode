@@ -1,0 +1,21 @@
+{
+  "debug.node.autoAttach": "off",
+  // "eslint.autoFixOnSave": true, // has been deprecated, use editor.codeActionsOnSave instead
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "files.eol": "\r\n",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false
+}

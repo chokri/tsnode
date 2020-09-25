@@ -1,0 +1,17 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "coveragePathIgnorePatterns": [
+    "/node_modules/"
+  ],
+  "testMatch": [
+    "./**/*.(spec|e2e).ts?(x)"
+  ],
+  "transformIgnorePatterns": [
+    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
+  ],
+  "collectCoverage": true,
+  "coverageReporters": [
+    "html"
+  ]
+}
