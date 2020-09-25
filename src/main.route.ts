@@ -20,7 +20,7 @@ export class MainRoute<T> {
       });
       this.router.get(
         '/',
-        (req: express.Request, res: express.Response) => mainController.index({ req, res }),
+        (req: express.Request, res: express.Response) => mainController.index({ res }),
       );
     }
 }

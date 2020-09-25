@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
+import { Response } from 'express';
 
 export class MainController {
-  public index({ req, res }: { req: Request; res: Response; }): void {
+  public index({ res }: { res: Response; }): void {
     res.json({
       version: '0.0.0',
       status: 'OK',
