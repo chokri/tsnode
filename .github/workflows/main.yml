@@ -5,13 +5,12 @@ name: CI
 # Controls when the action will run.
 on: [push, pull_request]
 
-strategy:
-  matrix:
-    node-version: [12.x, 15.x]
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 15.x]
     steps:
       - uses: actions/checkout@v2
       - name: Node.js
@@ -22,4 +21,6 @@ jobs:
       - name: yarn install, build and test
         run: | 
           npm install
-          yarn run build
+          npm run test
+        env:
+          CI: true
