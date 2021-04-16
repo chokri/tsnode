@@ -2,22 +2,30 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ master, develop ]
 #  pull_request:
 #    branches: [ master ]
   workflow_dispatch:
 
+strategy:
+  matrix:
+    node-version: [12.x, 15.x]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.5
-
       - uses: actions/checkout@v2
+      - name: Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install -g typescript
+      - name: yarn install, build and test
+        run: | 
+          npm install
+          yarn run build
